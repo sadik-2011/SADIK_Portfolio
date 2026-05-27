@@ -125,15 +125,13 @@ links.forEach(link => {
     });
 });
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('formName').value;
-    const email = document.getElementById('formEmail').value;
-    const subject = document.getElementById('formSubject').value;
-    const message = document.getElementById('formMessage').value;
-    
-    const mailtoLink = `mailto:abdurrahmansadik96@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
-    
-    window.location.href = mailtoLink;
-});
+const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function () {
+
+        // Clear form after submit
+        setTimeout(() => {
+            contactForm.reset();
+        }, 100);
+
+    });
