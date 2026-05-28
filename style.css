@@ -952,3 +952,14 @@ footer {
     backdrop-filter: blur(20px);
     background: rgba(255,255,255,0.03);
 }
+
+#progressBar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:linear-gradient(90deg,var(--accent-neon),var(--accent-purple));
+    z-index:99999;
+}
+
