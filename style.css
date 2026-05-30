@@ -962,4 +962,29 @@ footer {
     background:linear-gradient(90deg,var(--accent-neon),var(--accent-purple));
     z-index:99999;
 }
+.shop-btn{
+width:40px;
+height:40px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:var(--text-main);
+font-size:1rem;
+transition:var(--transition-smooth);
+}
 
+.shop-btn:hover{
+background:rgba(255,255,255,0.05);
+color:var(--accent-neon);
+transform:translateY(-2px);
+}
+
+[data-theme="light"] .shop-btn:hover{
+background:rgba(0,0,0,0.05);
+}
+.shop-btn:hover{
+    color:var(--accent-neon);
+    box-shadow:0 0 15px rgba(0,255,204,0.35);
+}
