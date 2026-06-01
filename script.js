@@ -22,8 +22,8 @@ window.addEventListener('mousemove', (e) => {
 });
 
 function tick() {
-    ringX += (mouseX - ringX) * 0.8;
-    ringY += (mouseY - ringY) * 0.8;
+    ringX += (mouseX - ringX) * 0.08;
+    ringY += (mouseY - ringY) * 0.08;
     followerRing.style.left = ringX + 'px';
     followerRing.style.top = ringY + 'px';
 
