@@ -952,6 +952,34 @@ footer {
     backdrop-filter: blur(20px);
     background: rgba(255,255,255,0.03);
 }
+.python-icon i{
+    background: linear-gradient(135deg,#3776AB,#FFD43B);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.skill-item:hover .fa-html5{
+    filter: drop-shadow(0 0 12px #E34F26);
+}
+
+.skill-item:hover .fa-css3-alt{
+    filter: drop-shadow(0 0 12px #1572B6);
+}
+
+.skill-item:hover .fa-js{
+    filter: drop-shadow(0 0 12px #F7DF1E);
+}
+
+.skill-item:hover .fa-python{
+    filter: drop-shadow(0 0 12px #3776AB);
+}
+
+.skill-item:hover .fa-git-alt{
+    filter: drop-shadow(0 0 12px #F05032);
+}
+
+.skill-item:hover .fa-github{
+    filter: drop-shadow(0 0 12px var(--accent-neon));
+}
 
 #progressBar{
     position:fixed;
