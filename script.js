@@ -182,3 +182,68 @@ window.addEventListener("scroll", () => {
 
    progressBar.style.width = progress + "%";
 });
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const chars = "01アイウエオカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letters = chars.split("");
+
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+
+for(let i = 0; i < columns; i++){
+drops[i] = 1;
+}
+
+function drawMatrix(){
+
+if(document.documentElement.getAttribute("data-theme") === "light"){
+    requestAnimationFrame(drawMatrix);
+    return;
+}
+
+ctx.fillStyle = "rgba(10,10,12,0.08)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle = "#00ff88";
+ctx.font = fontSize + "px monospace";
+
+for(let i = 0; i < drops.length; i++){
+
+    const text = letters[
+        Math.floor(Math.random() * letters.length)
+    ];
+
+    ctx.fillText(
+        text,
+        i * fontSize,
+        drops[i] * fontSize
+    );
+
+    if(
+        drops[i] * fontSize > canvas.height &&
+        Math.random() > 0.975
+    ){
+        drops[i] = 0;
+    }
+
+    drops[i]++;
+}
+
+requestAnimationFrame(drawMatrix);
+
+}
+
+drawMatrix();
+
+window.addEventListener("resize", () => {
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+});
