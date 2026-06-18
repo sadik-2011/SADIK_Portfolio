@@ -247,3 +247,5 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 });
+document.getElementById("year").textContent =
+new Date().getFullYear();
