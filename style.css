@@ -138,6 +138,72 @@ section {
     color: var(--text-main);
 }
 
+/* Premium CV Button */
+.btn-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.btn-cv::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-neon));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.btn-cv:hover::before {
+    opacity: 1;
+}
+
+.btn-cv:hover {
+    transform: translateY(-3px);
+    border-color: transparent;
+    box-shadow: 0 12px 24px rgba(112, 0, 255, 0.25);
+}
+
+.btn-cv-icon {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-neon));
+    color: #fff;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.btn-cv:hover .btn-cv-icon {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-cv-text {
+    position: relative;
+    z-index: 1;
+    padding: 14px 24px;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+}
+
+.btn-cv:hover .btn-cv-text {
+    color: #fff;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -266,6 +332,45 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.nav-cart-btn {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.nav-cart-btn:hover {
+    background: rgba(0, 255, 204, 0.1);
+    color: var(--accent-neon);
+    transform: translateY(-2px);
+}
+
+[data-theme="light"] .nav-cart-btn:hover {
+    background: rgba(0, 179, 149, 0.1);
+}
+
+.nav-cart-btn::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    background: var(--accent-purple);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--accent-purple);
 }
 
 .nav-theme-btn {
@@ -869,6 +974,9 @@ footer {
     .hero-content h1 {
         font-size: 2.8rem;
     }
+    .hero-btns {
+        flex-wrap: wrap;
+    }
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -996,4 +1104,3 @@ pointer-events:none;
 opacity:.18;
 display:block;
 }
-
