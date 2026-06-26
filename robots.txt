@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sadikportfolio.vercel.app/sitemap.xml
+Sitemap: https://abdurrahmansadik.pro.bd/sitemap.xml
